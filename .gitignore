@@ -1,0 +1,74 @@
+# Логи и дампы
+/logs/
+/upload/.htaccess
+/upload/tmp
+/upload/tmp/*
+
+# Файлы кэша
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stash/
+/bitrix/tmp/
+/bitrix/html_pages/
+/bitrix/backup/
+
+# Логи веб-сервера
+*.log
+
+# Конфигурационные файлы окружения
+/.settings.php
+/.settings_extra.php
+/dbconn.php
+
+# Локальные настройки и override
+/bitrix/php_interface/dbconn.php
+/bitrix/.settings.php
+/bitrix/.settings_extra.php
+
+# Данные пользователя
+/upload/
+/bitrix/modules/*.log
+/bitrix/modules/*.zip
+
+# Системные файлы
+/web.config
+/.idea/
+/.vscode/
+/*.sublime-project
+/*.sublime-workspace
+
+# Разное
+/thumb/
+/bitrix/tmp/
+/bitrix/updates/
+/bitrix/updater.log
+
+# Служебные файлы
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.bak
+*.backup
+*.tmp
+*.log
+
+# Игнорировать все *.sql файлы
+*.sql
+
+# Игнорировать конфигурационные файлы операционной системы
+*.bak
+*.ini
+*.old
+*.dist
+*.sh
+
+# Игнорировать специфичные для OS X файлы
+.DS_Store
+
+# Игнорировать специфичные для Windows файлы
+Thumbs.db
+desktop.ini
+
+# Игнорировать специфичные для Linux файлы
+*~
