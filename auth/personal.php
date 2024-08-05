@@ -1,5 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("TITLE", "Личные данные");
 $APPLICATION->SetTitle("Личные данные");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:main.profile",
