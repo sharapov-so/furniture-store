@@ -11,20 +11,16 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
-$arViewModeList = $arResult['VIEW_MODE_LIST'];
-
-
-
 ?>
-    <ul>
-<?php foreach ($arResult["SECTIONS"] as $arItem): ?>
-
-    <li>
-        <a href="/products/section.php?SECTION=<?= $arItem["ID"] ?>"><?= $arItem["NAME"] ?></a>
-    </li>
-<?php endforeach; ?>
-    </ul>
-
-
-
+<div class="news-index">
+<?foreach($arResult["IBLOCKS"] as $arIBlock):?>
+	<?if(count($arIBlock["ITEMS"])>0):?>
+		<b><?=$arIBlock["NAME"]?></b>
+		<ul>
+		<?foreach($arIBlock["ITEMS"] as $arItem):?>
+			<li><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></li>
+		<?endforeach;?>
+		</ul>
+	<?endif?>
+<?endforeach;?>
+</div>
