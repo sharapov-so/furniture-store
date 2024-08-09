@@ -126,10 +126,12 @@ IncludeTemplateLangFile(__FILE__);
 
 
             <div class="actions-block">
-                <form action="/" class="main-frm-search">
-                    <input type="text" placeholder="Поиск">
-                    <button type="submit"></button>
-                </form>
+                <?$APPLICATION->IncludeComponent("bitrix:search.form", "form_search", Array(
+                    "PAGE" => "#SITE_DIR#search/index.php",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+                    "USE_SUGGEST" => "N",	// Показывать подсказку с поисковыми фразами
+                ),
+                    false
+                );?>
                 <? $APPLICATION->IncludeComponent("bitrix:system.auth.form", "auth_form", array(
                     "FORGOT_PASSWORD_URL" => "/auth/forget.php",    // Страница забытого пароля
                     "PROFILE_URL" => "/auth/personal.php",    // Страница профиля
@@ -143,34 +145,34 @@ IncludeTemplateLangFile(__FILE__);
     </header>
     <!-- /header -->
     <!-- nav -->
-    <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu", Array(
-        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-        "CHILD_MENU_TYPE" => "subtop",	// Тип меню для остальных уровней
-        "DELAY" => "N",	// Откладывать выполнение шаблона меню
-        "MAX_LEVEL" => "3",	// Уровень вложенности меню
-        "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+    <? $APPLICATION->IncludeComponent("bitrix:menu", "top_menu", array(
+        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+        "CHILD_MENU_TYPE" => "subtop",    // Тип меню для остальных уровней
+        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+        "MAX_LEVEL" => "3",    // Уровень вложенности меню
+        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
             0 => "",
         ),
-        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-        "MENU_CACHE_TYPE" => "N",	// Тип кеширования
-        "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-        "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
-        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+        "ROOT_MENU_TYPE" => "top",    // Тип меню для первого уровня
+        "USE_EXT" => "Y",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
     ),
         false
-    );?>
+    ); ?>
     <!-- /nav -->
 
     <? if ($APPLICATION->GetCurPage() != '/'): ?>
         <!-- breadcrumbs -->
-        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "top_navigate", Array(
-            "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-            "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-            "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+        <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", "top_navigate", array(
+            "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+            "SITE_ID" => "s1",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+            "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
             "COMPONENT_TEMPLATE" => ".default"
         ),
             false
-        );?>
+        ); ?>
         <!-- /breadcrumbs -->
     <? endif; ?>
 
@@ -181,8 +183,15 @@ IncludeTemplateLangFile(__FILE__);
             <!-- content -->
             <div class="content">
                 <div class="cnt">
+
+
                     <? if ($APPLICATION->GetCurPage() != '/'): ?>
-                    <header>
-                        <h1><? $APPLICATION->ShowTitle(); ?></h1>
-                    </header>
+                        <header>
+                            <h1><? $APPLICATION->ShowTitle(); ?></h1>
+                        </header>
                     <? endif; ?>
+
+
+
+
+

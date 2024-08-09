@@ -4,16 +4,16 @@ $APPLICATION->SetPageProperty("TITLE", "Тестовая страница");
 $APPLICATION->SetTitle("Тестовая страница");
 ?>Тестовая страница<br>
  <br>
-<br>
 
 <?php
 $APPLICATION->IncludeComponent(
-    "custom:my_component",
+    "my:catalog.section",
     "",
-    array(
-        "IBLOCK_ID" => 4, // ID вашего инфоблока
-        "CACHE_TIME" => 3600,
-    )
+    [
+        "IBLOCK_ID" => 4, // Замените на ID вашего инфоблока
+    ]
 );
 ?>
+
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

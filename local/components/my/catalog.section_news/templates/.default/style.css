@@ -1,0 +1,39 @@
+/* Стиль для каждого элемента списка */
+.news-groups ul > li {
+    padding-left: 30px; /* Отступ слева для первого уровня */
+    position: relative;
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+}
+
+/* Стиль для вложенных списков */
+.news-groups ul ul > li {
+    padding-left: 30px; /* Отступ слева для каждого вложенного уровня */
+    margin-bottom: 8px; /* Отступ снизу для элементов на вложенных уровнях */
+}
+
+/* Иконка и стиль для каждого раздела */
+.news-groups ul > li.section-item {
+    font-size: 18px; /* Размер шрифта для разделов */
+    font-weight: bold;
+}
+
+.news-groups ul > li.section-item:before,
+.news-groups ul ul > li.section-item:before {
+    content: '\1F4C1'; /* Иконка папки */
+    position: absolute;
+    left: 0;
+}
+
+/* Иконка и стиль для каждого элемента (файла) */
+.news-groups ul > li.element-item,
+.news-groups ul ul > li.element-item {
+    font-size: 16px; /* Размер шрифта для элементов */
+    font-weight: normal;
+}
+
+.news-groups ul > li.element-item:before,
+.news-groups ul ul > li.element-item:before {
+    content: '\1F4C4'; /* Иконка файла */
+    position: absolute;
+    left: 0;
+}

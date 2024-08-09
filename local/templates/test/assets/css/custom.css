@@ -6,3 +6,98 @@
     height: 31px!important;
     box-shadow: none!important;
 }
+
+
+#bx_incl_area_6_1{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+#bx_incl_area_6_1 > li:before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 26px;
+    position: absolute;
+    top: 50%;
+    left: -1px;
+    border-left: 1px solid #2879ac;
+    border-right: 1px solid #4b97c8;
+    margin-top: -13px;
+}
+
+#bx_incl_area_6_1 > li{
+    display: table-cell;
+    position: relative;
+}
+
+#bx_incl_area_6_1 > li > a {
+    display: block;
+    height: 50px;
+    position: relative;
+    line-height: 50px;
+    text-align: center;
+    padding: 0 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.57);
+    font-family: 'HelveticaNeueCyrBold', sans-serif;
+
+}
+
+
+.side-block > .inner-block > .text-block{
+    min-height: 75px;
+}
+
+.rew-footer-carousel .photo-block img{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+}
+
+
+.main-actions-box .photo-block img{
+    width: 88px;
+    height: 65px;
+    object-fit: cover;
+}
+
+
+.review-img-wrap > a > img{
+    width: 66px;
+    height: 66px;
+    object-fit: cover;
+}
+
+
+.main-frm-search .btn, .main-frm-search button, .main-frm-search input[type="submit"] {
+    display: block;
+    width: 39px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    min-width: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.search-page > form{
+    display: flex;
+}
+
+.search-page > form > input[type="submit"]{
+    height: 31px;
+}
+
+
